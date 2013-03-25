@@ -42,10 +42,10 @@ Spree::Core::Engine.routes.draw do
     end
   end
   
+  resources :pages, :controller => 'static_pages', :only => [:show] 
+  
   match '/contacts', :to => 'static_pages#contacts', :as => :contacts
   match '/contacts/send', :to => "static_pages#create_mail", :via => :post
-  match '/pages/:id', :to => 'static_pages#show', :as => :page
-  match '/pages', :to => 'static_pages#index', :as => :pages
   match '/blog', :to => 'posts#index', :as => :blog
   match '/news/:id', :to => 'posts#show', :as => :post
   
