@@ -16,7 +16,7 @@ module Spree
 
         def load_data
           @static_page = Spree::StaticPage.find_by_permalink(params[:static_page_id])
-          @static_pages = [@static_page.title, @static_page.id]
+          @static_pages = [[@static_page.title, @static_page.id]]
         end
 
         def set_viewable

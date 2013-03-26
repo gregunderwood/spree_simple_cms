@@ -6,7 +6,7 @@
     </div>
     <div data-hook="variant" class="field">
       <%= f.label Spree::StaticPage.model_name.human %><br>
-      <%= f.select :viewable_id, @static_pages, {}, {:class => 'select2 fullwidth'} %>
+      <%= f.select :viewable_id, options_for_select(@static_pages), {}, {:class => 'select2 fullwidth'} %>
     </div>
   </div>
   <div data-hook="alt_text" class="field omega five columns">
