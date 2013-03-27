@@ -1,5 +1,14 @@
-<div class="grid_9" data-hook="page_show_content">
-	<%= raw(@static_page.body) %>
-</div>
+<% content_for :subheader do %>
+  <h1><%= @static_page.title %></h1>
+<% end %>
 
-<%= render :partial => 'spree/shared/sidebar_pages' %>
+<div class="grid_9" data-hook="page_show_content">
+	<% @static_page.images.each do |image| %>
+  	<div class="page_image_container four columns">
+  	    <%= image_tag image.attachment.url %>	  
+  	</div>
+	<% end %>
+	<div class="eight columns">
+	<%= raw(@static_page.body) %>
+	</div>
+</div>
